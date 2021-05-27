@@ -32,9 +32,14 @@ class SorterBad {
 // console.log(sorterBad.collection);
 
 // good code -----------------------------------------
+interface Sortable {
+  length: number;
+  compare(leftIndex: number, rightIndex: number): boolean;
+  swap(eftIndex: number, rightIndex: number): void;
+}
 
 export class Sorter {
-  constructor(public collection: NumbersCollection) {}
+  constructor(public collection: Sortable) {}
 
   sort(): void {
     for (let i: number = 0; i < this.collection.length; i++) {
