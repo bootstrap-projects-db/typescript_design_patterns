@@ -1,11 +1,16 @@
-export class NumbersCollection {
+import { Sorter } from "./Sorter";
+
+export class NumbersCollection extends Sorter {
   // cuz of get you can call length as an attribute
   // --> new NumbersCollecton([1, 2, 3]).length
   get length(): number {
     return this.data.length;
   }
 
-  constructor(public data: number[]) {}
+  constructor(public data: number[]) {
+    super();
+  }
+
   compare(leftIndex: number, rightIndex: number): boolean {
     return this.data[leftIndex] > this.data[rightIndex];
   }
