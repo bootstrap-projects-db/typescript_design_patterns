@@ -49,7 +49,7 @@ export class LinkedList {
     // is just of type Node and not Node | null
     let node: Node | null = this.head;
     while (node) {
-      if (node.data === index) {
+      if (counter === index) {
         return node;
       }
 
