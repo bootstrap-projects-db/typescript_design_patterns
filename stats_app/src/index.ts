@@ -21,6 +21,7 @@
 import { MatchReader } from "./composition/MatchReader";
 import { CsvFileReader } from "./composition/CsvFileReader";
 import { ConsoleReport } from "./reportTargets/ConsoleReport";
+import { HtmlReport } from "./reportTargets/HtmlReports";
 import { WinsAnalysis } from "./analyzers/WinsAnalysis";
 import { Summary } from "./Summary";
 // create an pbject that satisfies the DataReader interface
@@ -32,7 +33,8 @@ matchReader.load();
 
 const summary = new Summary(
   new WinsAnalysis("Man United"),
-  new ConsoleReport()
+  new HtmlReport()
+  // new ConsoleReport()
 );
 
 summary.buildAndPrintReport(matchReader.matches);
